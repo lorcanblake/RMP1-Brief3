@@ -1,4 +1,7 @@
 import processing.video.*;
+import arb.soundcipher.*;
+
+SoundCipher sc = new SoundCipher(this);
 Capture video;
 
 void setup() {
@@ -10,6 +13,7 @@ void setup() {
 
 void draw() {
   background(255);   // Clear the background on every frame
+  sc.playNote(random(1,255), random(1,255), 2.0);
   if (video.available()) {
     video.read();
   } 
